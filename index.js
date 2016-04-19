@@ -1,8 +1,12 @@
 'use strict';
 
 var dns = require('dns');
-var confit = require('confit');
+
 var path = require('path');
+var config = require('./config');
+
+
+startLookup(config.lookup);
 
 function startLookup(lookup) {
 	console.log(lookup);
@@ -17,11 +21,3 @@ function startLookup(lookup) {
 		});
 	}, 1000);
 }
-
-var options = {
-	basedir: path.join(__dirname, 'config')
-}
-confit(options).create(function create(err, config) {
-	console.log(config.get('lookup'));
-	startLookup(config.get('lookup'));
-});
