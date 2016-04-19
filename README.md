@@ -9,6 +9,8 @@ A naive and quick DNS test
 # Usage
 
 `node .`
+
+> Interval of 1 sec will lookup the hostname and report Error , if no Error will print `null`
 __
 
 # Configuration
